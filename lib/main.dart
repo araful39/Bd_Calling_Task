@@ -1,7 +1,9 @@
+import 'package:bd_calling_task/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'view/home.dart';
+import 'assignment1/view/product_screen/product_screen.dart';
+
 
 void main() {
   runApp(const MyApp());
