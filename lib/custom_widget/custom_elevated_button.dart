@@ -12,6 +12,6 @@ class CustomElevatedButton extends StatelessWidget {
     return SizedBox(
 
 
-        child: ElevatedButton(onPressed: onPressed, child: Text(buttonName)));
+        child: ElevatedButton(onPressed: onPressed,style: ElevatedButton.styleFrom(backgroundColor: Colors.indigo), child: Text(buttonName,style: TextStyle(color: Colors.white),)));
   }
 }
