@@ -16,7 +16,7 @@ class ProductController extends GetxController {
     getProduct();
   }
 
-  void getProduct() async {
+   getProduct() async {
     isLoading.value = true;
     allProduct.value = await ProductService.fetchAllProduct();
     log("------------------allproduct${allProduct.length}");
