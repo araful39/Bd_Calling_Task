@@ -4,10 +4,6 @@ import 'package:bd_calling_task/api/api.dart';
 import 'package:bd_calling_task/assignment2/model/hive_model/hive_all_product_model.dart';
 import 'package:http/http.dart' as http;
 
-
-
-
-
 class ProductService2 {
   static Future<List<HiveAllProductModel>> fetchAllProduct2() async {
     List<HiveAllProductModel> allProduct = [];

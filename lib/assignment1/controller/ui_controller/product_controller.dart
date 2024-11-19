@@ -10,16 +10,13 @@ class ProductController extends GetxController {
 
   @override
   void onInit() {
-    log("------------------1111111111111111111111111111111---------------------");
-
     super.onInit();
     getProduct();
   }
 
-   getProduct() async {
+  getProduct() async {
     isLoading.value = true;
     allProduct.value = await ProductService.fetchAllProduct();
-    log("------------------allproduct${allProduct.length}");
     isLoading.value = false;
   }
 }

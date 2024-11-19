@@ -8,31 +8,26 @@ import 'package:hive/hive.dart';
 
 import '../service_controller/product_service2.dart';
 
-
-class ProductController2 extends GetxController {
+class AssingmentController2 extends GetxController {
   RxBool isLoading = false.obs;
   RxList<HiveAllProductModel> allProduct2 = <HiveAllProductModel>[].obs;
 
   // Hive Box
 
-
   @override
   void onInit() {
-    log("----------ssssssss-------------");
     super.onInit();
     getProduct();
   }
-
+//akhn na,,pore nam ta change kore dicbi lagbe na privet kora na dhuro,,function er vitore private lagena
   getProduct() async {
-  var  _box = Hive.box<HiveAllProductModel>('productsBox4');
-    log("------------ fdffffffffffff -------------------");
-    log("------------ mmmmmmmmmm -------------------");
+    var box = Hive.box<HiveAllProductModel>('productsBox5');
 
     if (!await ConnectionChecker.checkConnection()) {
       EasyLoading.showError("No internet connection. Loading offline data...");
 
       // Load data from Hive when offline
-      allProduct2.value = _box.values.toList();
+      allProduct2.value = box.values.toList();
       return;
     }
 
@@ -41,13 +36,14 @@ class ProductController2 extends GetxController {
       isLoading.value = true;
 
       // Fetch products from API
-      List<HiveAllProductModel> fetchedProducts = await ProductService2.fetchAllProduct2();
+      List<HiveAllProductModel> fetchedProducts =
+          await ProductService2.fetchAllProduct2();
 
       allProduct2.value = fetchedProducts;
 
       // Save data to Hive
-      await _box.clear(); // Clear old data
-      await _box.addAll(fetchedProducts);
+      await box.clear(); // Clear old data
+      await box.addAll(fetchedProducts);
 
       EasyLoading.showSuccess("Products loaded successfully!");
     } catch (e) {

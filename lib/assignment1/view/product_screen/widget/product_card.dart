@@ -38,7 +38,7 @@ class ProductCard extends StatelessWidget {
             Text(
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              "$name",
+              name,
               style: const TextStyle(
                 color: Colors.indigo,
               ),

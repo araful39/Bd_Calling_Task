@@ -6,12 +6,12 @@ import 'package:get/get.dart';
 
 
 
-class ProductScreen2 extends StatelessWidget {
-  const ProductScreen2({super.key});
+class Assingment2 extends StatelessWidget {
+  const Assingment2({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ProductController2 productController = Get.put(ProductController2());
+    AssingmentController2 productController = Get.put(AssingmentController2());
     return Scaffold(
       appBar: AppBar(
         title: const Text("All Product 2"),

@@ -8,15 +8,10 @@ class ProductService {
   static Future<List<AllProductModel>> fetchAllProduct() async {
     List<AllProductModel> allProduct = [];
 
-
     try {
-      log("--------------44444444444444444444444444-------------------------");
-
       var response = await http.get(Uri.parse(Api.allProductApi));
 
       if (response.statusCode == 200) {
-        log("--------------------555555555555555555-------------------");
-
         var json = jsonDecode(response.body);
         for (var data in json) {
           AllProductModel allProductModel = AllProductModel.fromJson(data);
@@ -25,8 +20,6 @@ class ProductService {
       }
       return allProduct;
     } catch (e) {
-      log("-----------------6666666666666666666666666----------------------");
-
       log("Error: $e");
     }
     return [];

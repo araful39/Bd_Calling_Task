@@ -2,15 +2,16 @@ import 'package:bd_calling_task/settings/hive_setting.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
+import 'package:hive_flutter/adapters.dart';
 
-import 'assignment2/view/product_screen/product_screen2.dart';
 import 'home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // Initialize Hive
-  await HiveSettings.hiveSetting();
+  await Hive.initFlutter();
+  // Called Hive Settings
+  await HiveSettings.hiveSettingAssingment2();
+  await HiveSettings.hiveSettingAssingment3();
 
   runApp(const MyApp());
 }
